@@ -1,6 +1,6 @@
 import { prisma } from '../../../prismaClient';
 
-export default async function handle(req, res) {
+export default async function handle(req: any, res: any) {
     const { id } = req.query;
 
     try {

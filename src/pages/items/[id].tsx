@@ -34,7 +34,7 @@ function ItemDetail() {
             ) : (
                 <p>Loading...</p>
             )}
-            <Link href="/items">Back to items</Link>
+            <Link href="/items">Se Liste</Link>
         </div>
     );
 }
