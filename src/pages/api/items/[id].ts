@@ -8,6 +8,11 @@ export default async function handle(req, res) {
             const item = await prisma.item.findUnique({
                 where: { id: Number(id) },
             });
+
+            if (!item) {
+                return res.status(404).json({ message: 'Item not found' });
+            }
+
             return res.json(item);
         } else {
             res.status(405).json({ message: 'Method not allowed' });

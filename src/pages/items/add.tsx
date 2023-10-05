@@ -17,19 +17,19 @@ function AddItemPage() {
             });
 
             if (response.status === 200) {
-                setStatus('Item added successfully!');
+                setStatus('Ting lagt til listen');
             } else {
-                setStatus('Oops! Something went wrong. Please try again.');
+                setStatus('Feil, prøv igjen.');
             }
         } catch (error) {
             console.error('Error: ', error);
-            setStatus('Oops! Something went wrong. Please try again.');
+            setStatus('Feil, prøv igjen.');
         }
     };
 
     return (
         <div>
-            <h1>Add Item</h1>
+            <h1>Legg til Liste</h1>
             <form onSubmit={handleSubmit}>
                 <div>
                     <label htmlFor="name">Name: </label>
@@ -50,10 +50,10 @@ function AddItemPage() {
                         onChange={(e) => setDescription(e.target.value)}
                     />
                 </div>
-                <button type="submit">Add Item</button>
+                <button type="submit">Legg til</button>
             </form>
             {status && <p>{status}</p>}
-            <Link href="/items">Back to items</Link>
+            <Link href="/items">Se Liste</Link>
         </div>
     );
 }
